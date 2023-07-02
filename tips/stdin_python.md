@@ -1,7 +1,7 @@
 
 # abst
 
-Pythonの標準入力についてのメモ. これまではネットにあるやつを参考にしていたけど, しばしば網羅されてなかったりしたのでそれも含めて遭遇したものをメモる.
+Pythonの標準入力についてのメモ. これまではネットにあるやつを参考にしていたけど, しばしば網羅されてなかったりしたのでそれも含めて遭遇したものをメモる. ターミナル上でテストケースを回すためになるべく1行ごとに入力されるのが望ましい.
 
 # 1行1列
 
@@ -74,8 +74,6 @@ x2 y2
 xN yN
 ```
 
-例1 x,yを独立に格納
-
 ```Python
 N = int(input())
 x = [None]*N
@@ -83,13 +81,6 @@ y = [None*N]
 
 for i in range(N):
     x[i], y[i] = map(int,input().split())
-```
-
-例2 x,yを $[x_i, y_i]$ として格納.
-
-```Python
-N = int(input())
-l = [list(map(int, input().split())) for l in range(N)]
 ```
 
 # 一般行列データ
@@ -104,8 +95,11 @@ AM,1 AM,2 ... AM,N
 ```
 
 ```Python
-N, M = map(int,input().split()) 
-A = [list(map(int, input().split())) for l in range(M)]
+N,M = map(int, input().split())
+A = []
+for i in range(M):
+    a = list(map(int, input().split()))
+    A.append(a)
 ```
 
 1文字ずつ取得したい場合(例: <https://atcoder.jp/contests/abc300/tasks/abc300_b>)
