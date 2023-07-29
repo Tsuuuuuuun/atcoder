@@ -1,0 +1,1 @@
+print(["No","Yes"][input() in "ACE BDF CEG DFA EGB FAC GBD".split()])
