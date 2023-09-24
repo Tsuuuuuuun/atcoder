@@ -16,5 +16,5 @@ while len(numbers) < k:
             numbers.append(new_num)
     index += 1
 
-result = numbers[k - 1]
+result = numbers[-1]
 print(result)
